@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'rps-frontend';
+  title = '... have a \`Rock Paper Scissor\` game!';
 }

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="panel panel-primary" id="buttonVersion">
+        <div class="panel-heading">
+            <h2>Pick your choice!!</h2>
+        </div>
+        <div class="panel-body">
+                <div class="row">
+                    <div *ngFor="let name of picks; ; let i = index"  class="col-sm-3">
+                        <div class="card text-align">
+                            <div class="card-body">
+                                <img src={{images[i]}} />
+                                <h5 class="card-title">{{name}}</h5>
+                                <button (click)="startGameClick(name)" class="btn btn-info">Pick!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

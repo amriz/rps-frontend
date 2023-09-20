@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <form>
+            <div class="form-group row">
+                <label for="player" class="col-sm-2 col-form-label"><b>You</b> choose..</label>
+                <img *ngIf="this.game.player.toString() == 'ROCK'" src={{this.images[0]}} />            
+                <img *ngIf="this.game.player.toString() == 'PAPER'" src={{this.images[1]}} />            
+                <img *ngIf="this.game.player.toString() == 'SCISSOR'" src={{this.images[2]}} />            
+                <div class="col-sm-5">                    
+                    <input type="text" readonly class="form-control-plaintext" id="player" value="{{game.player}}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="computer" class="col-sm-2 col-form-label"><b>Computer</b> chooses..</label>
+                <img *ngIf="this.game.computer.toString() == 'ROCK'" src={{this.images[0]}} />            
+                <img *ngIf="this.game.computer.toString() == 'PAPER'" src={{this.images[1]}} />            
+                <img *ngIf="this.game.computer.toString() == 'SCISSOR'" src={{this.images[2]}} />            
+                <div class="col-sm-5">
+                    <input type="text" readonly class="form-control-plaintext" id="computer" value="{{game.computer}}">
+                </div>
+            </div>
+        </form>
+        <div class="panel-primary">
+            <h5>Result ... </h5>
+            <h5>=> <b>{{game.winner}}</b> wins</h5>
+        </div>        
+    </div>
+</div>
+<div class="card-body">
+<button (click)="startAgain()" class="btn btn-secondary">New Playing!</button>
+</div>
