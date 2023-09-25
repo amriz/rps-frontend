@@ -16,6 +16,7 @@ export class StartComponent implements OnInit {
 
   ngOnInit(): void {
       this.picks = this.picks.slice(this.picks.length/2); 
+      console.log('this-picks',this.picks)
       this.images = [
           'assets/images/rock.png',
           'assets/images/paper.png',

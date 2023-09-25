@@ -1,31 +1,35 @@
 <div class="panel panel-primary">
     <div class="panel-body">
-        <form>
-            <div class="form-group row">
-                <label for="player" class="col-sm-2 col-form-label"><b>You</b> choose..</label>
+         <!-- Grid row -->
+        <div class="row text-center">
+            <!-- Grid column -->
+            <div class="col-md-7">
+                <label for="player" class="col-sm-5 col-form-label"><b>You</b> choose..</label>        
+            <div class="avatar mx-auto">
                 <img *ngIf="this.game.player.toString() == 'ROCK'" src={{this.images[0]}} />            
                 <img *ngIf="this.game.player.toString() == 'PAPER'" src={{this.images[1]}} />            
-                <img *ngIf="this.game.player.toString() == 'SCISSOR'" src={{this.images[2]}} />            
-                <div class="col-sm-5">                    
-                    <input type="text" readonly class="form-control-plaintext" id="player" value="{{game.player}}">
-                </div>
+                <img *ngIf="this.game.player.toString() == 'SCISSOR'" src={{this.images[2]}} />
+            </div>        
+                <h6 class="font-weight-bold dark-grey-text my-4">{{game.player}}</h6>
             </div>
-            <div class="form-group row">
-                <label for="computer" class="col-sm-2 col-form-label"><b>Computer</b> chooses..</label>
+            <!-- Grid column -->  
+            <div class="col-md-3">
+                <label for="computer" class="col-sm-13 col-form-label"><b>Computer</b> chooses..</label>
+            <div class="avatar mx-auto">
                 <img *ngIf="this.game.computer.toString() == 'ROCK'" src={{this.images[0]}} />            
                 <img *ngIf="this.game.computer.toString() == 'PAPER'" src={{this.images[1]}} />            
-                <img *ngIf="this.game.computer.toString() == 'SCISSOR'" src={{this.images[2]}} />            
-                <div class="col-sm-5">
-                    <input type="text" readonly class="form-control-plaintext" id="computer" value="{{game.computer}}">
-                </div>
+                <img *ngIf="this.game.computer.toString() == 'SCISSOR'" src={{this.images[2]}} />
             </div>
-        </form>
-        <div class="panel-primary">
-            <h5>Result ... </h5>
-            <h5>=> <b>{{game.winner}}</b> wins</h5>
+                <h6 class="font-weight-bold dark-grey-text my-4">{{game.computer}}</h6>       
+            </div>
+            <!-- Grid column -->
+            <div class="card-body">
+                <h5><b>{{game.winner}}</b> win(s)</h5>                
+                <h5><b>Score</b></h5> 
+                <h5>You: {{scoring.player}} || Computer: {{scoring.computer}}</h5>
+                <button (click)="startAgain()" class="btn btn-primary mr-4">New Playing!</button>
+                <button (click)="resetScore()" class="btn btn-info">Reset</button>
+                </div>
         </div>        
     </div>
-</div>
-<div class="card-body">
-<button (click)="startAgain()" class="btn btn-secondary">New Playing!</button>
 </div>
